@@ -445,3 +445,60 @@ footer {
     background: #06b6d4;
 }
 
+/* Mobile responsive design */
+@media (max-width: 600px) {
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 500px;
+    padding: 30px 20px;
+    background-position: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+}
