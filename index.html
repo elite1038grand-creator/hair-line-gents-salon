@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Line Gents Salon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Hair Line Gents Salon</div>
+   <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#hours">Hours</a>
+    <a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Hair Line Gents Salon</h1>
+
+        <p>
+            Premium Haircuts • Skin Fades • Beard Grooming
+        </p>
+
+        <a href="#contact" class="btn">
+            Visit Us
+        </a>
+
+    </div>
+
+</section>
+
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <p>
+        At Hair Line Gents Salon, we combine modern styling with traditional barbering.
+        Whether you're looking for a fresh fade, beard trim, or a classic haircut,
+        our experienced barbers are here to keep you looking your best.
+    </p>
+</section>
+
+<section id="services" class="section dark">
+    <h2>Our Services</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Classic Haircut</h3>
+            <p>Professional haircut tailored to your style.</p>
+        </div>
+
+        <div class="card">
+            <h3>Skin Fade</h3>
+            <p>Modern fade with precise detailing.</p>
+        </div>
+
+        <div class="card">
+    <h3>Hair & Beard Combo</h3>
+    <p>Complete grooming package.</p>
+</div>
+
+    </div>
+
+<section id="gallery" class="section">
+
+    <h2>Gallery</h2>
+
+    <div class="gallery">
+    <img src="images/hair.png" onclick="openImage(this.src)">
+    <img src="images/hairr.png" onclick="openImage(this.src)">
+    <img src="images/hairy.png" onclick="openImage(this.src)">
+    <img src="images/asc.png" onclick="openImage(this.src)">
+    <img src="images/hairs.png" onclick="openImage(this.src)">
+    <img src="images/usr.png" onclick="openImage(this.src)">
+    <img src="images/hyal.png" onclick="openImage(this.src)">
+    <img src="images/hairli.png" onclick="openImage(this.src)">
+    <img src="images/hfds.png" onclick="openImage(this.src)">
+    <img src="images/asir.png" onclick="openImage(this.src)">
+    <img src="images/urss.png" onclick="openImage(this.src)">
+    <img src="images/rairt.png" onclick="openImage(this.src)">
+    <img src="images/raruar.png" onclick="openImage(this.src)">
+    <img src="images/isnf.png" onclick="openImage(this.src)">
+    <img src="images/isis.png" onclick="openImage(this.src)">
+    <img src="images/yeair.png" onclick="openImage(this.src)">
+</div>
+
+</section>
+<!-- Image popup -->
+<div id="imageModal" class="image-modal" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img id="modalImage" src="">
+</div>
+</section>
+
+<section id="hours" class="section">
+    <h2>Opening Hours</h2>
+
+    <table>
+        <tr>
+            <td>Monday - Thursday</td>
+            <td>10:00 AM - 10:00 PM</td>
+        </tr>
+
+        <tr>
+            <td>Friday - Sunday</td>
+            <td>10:00 AM - 11:30 PM</td>
+        </tr>
+    </table>
+
+</section>
+
+<section id="contact" class="section dark">
+
+    <div class="contact-box">
+
+        <h2>Contact Us</h2>
+
+        <p><strong>Phone:</strong> +971 52 526 7700</p>
+
+        <p><strong>Email:</strong> info@hairlinegentsalon.com</p>
+
+        <p><strong>Location:</strong> Al Kuwait St - near NMC Medical Center - Hay Al Sharq - Sharjah, UAE</p>
+
+        <a href="https://maps.app.goo.gl/rsT2x3ZAsA79DcXG9"
+           target="_blank"
+           class="location-btn">
+            📍 View Location
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Hair Line Gents Salon. All Rights Reserved.</p>
+</footer>
+<script>
+function openImage(src) {
+    document.getElementById("modalImage").src = src;
+    document.getElementById("imageModal").style.display = "flex";
+}
+
+function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+}
+</script>
+</body>
+</html>
