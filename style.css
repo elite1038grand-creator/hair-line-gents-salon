@@ -521,28 +521,31 @@ footer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  border-top: 1px solid #334155;
+  border-left: 1px solid #334155;
 }
 
 .info-card {
   padding: 32px;
   min-height: 150px;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
+  border-right: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+  background: #1e293b;
+  color: #ffffff;
 }
 
 .info-card h3 {
   margin: 0 0 22px;
   font-size: 20px;
   font-weight: 500;
+  color: #ffffff;
 }
 
 .info-card p {
   margin: 10px 0;
   font-size: 17px;
   line-height: 1.6;
+  color: #ffffff;
 }
 
 .info-list {
