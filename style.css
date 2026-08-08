@@ -1124,9 +1124,9 @@ html {
 }
 
 .logo img {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
     flex-shrink: 0;
 }
 
