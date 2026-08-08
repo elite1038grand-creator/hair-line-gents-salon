@@ -15,6 +15,7 @@
    <a href="#about">About</a>
    <a href="#services">Services</a>
    <a href="#service-info">Service Information</a>
+   <a href="#booking">Book Appointment</a>  
    <a href="#gallery">Gallery</a>
    <a href="#hours">Hours</a>
    <a href="#contact">Contact</a>
@@ -183,6 +184,7 @@
 
     <form id="bookingForm">
 
+    <div class="booking-field">
         <label for="bookingService">Choose Service</label>
         <select id="bookingService" required>
             <option value="">Select a service</option>
@@ -197,21 +199,35 @@
             <option>Haircut + Beard Styling - 35 DHS</option>
             <option>Beard Black Color - 30 DHS</option>
         </select>
+    </div>
 
+    <div class="booking-field">
         <label for="bookingDate">Choose Date</label>
         <input type="date" id="bookingDate" required>
+    </div>
 
+    <div class="booking-field">
         <label for="bookingTime">Choose Time</label>
-        <input type="time" id="bookingTime" required>
+        <select id="bookingTime" required>
+            <option value="">Select a time</option>
+        </select>
+    </div>
 
+    <div class="booking-field">
         <label for="customerName">Your Name</label>
         <input type="text" id="customerName" placeholder="Enter your name" required>
+    </div>
 
+    <div class="booking-field">
         <label for="customerPhone">Phone Number</label>
         <input type="tel" id="customerPhone" placeholder="Enter your phone number" required>
+    </div>
 
-        <button type="submit">Confirm Booking</button>
+    <button type="submit" class="booking-submit">
+        Confirm Booking
+    </button>
 
+</form>
     </form>
 </section>
     
