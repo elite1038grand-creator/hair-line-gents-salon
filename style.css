@@ -988,3 +988,89 @@ footer {
     background: #9333ea;
     transform: translateY(-2px);
 }
+
+/* =========================
+   BOOKING APPOINTMENT
+   ========================= */
+
+.booking-section {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.booking-section h2 {
+    margin-bottom: 15px;
+}
+
+.booking-section > p {
+    margin-bottom: 40px;
+}
+
+#bookingForm {
+    max-width: 850px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    text-align: left;
+}
+
+.booking-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.booking-field label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.booking-field input,
+.booking-field select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 15px;
+    border-radius: 8px;
+    border: 1px solid #39465c;
+    background: #1f2b3e;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.booking-field input:focus,
+.booking-field select:focus {
+    border-color: #7c3aed;
+}
+
+.booking-submit {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 10px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    background: #7c3aed;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.booking-submit:hover {
+    background: #9333ea;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+    #bookingForm {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-submit {
+        grid-column: 1;
+    }
+}
