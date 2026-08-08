@@ -485,21 +485,103 @@ function closeImage() {
     <p>© 2026 Hair Line Gents Salon. All Rights Reserved.</p>
 </footer>
 <div id="imageModal" class="image-modal">
-    <span class="close-image">&times;</span>
-    <img id="modalImage">
+    <button class="image-nav prev-image" type="button">&#10094;</button>
+
+    <img id="modalImage" src="" alt="">
+
+    <button class="image-nav next-image" type="button">&#10095;</button>
+
+    <button class="close-image" type="button">&times;</button>
 </div>
 
 <script>
-document.querySelectorAll('.card img').forEach(function(img) {
-    img.onclick = function() {
-        document.getElementById('modalImage').src = this.src;
-        document.getElementById('imageModal').classList.add('show');
-    };
+const serviceImages = Array.from(document.querySelectorAll('.card img'));
+
+let currentImageIndex = 0;
+
+function openImage(index) {
+    currentImageIndex = index;
+
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+
+    modalImage.src = serviceImages[currentImageIndex].src;
+    modalImage.alt = serviceImages[currentImageIndex].alt;
+
+    modal.classList.add('show');
+}
+
+function showNextImage() {
+    currentImageIndex =
+        (currentImageIndex + 1) % serviceImages.length;
+
+    updateModalImage();
+}
+
+function showPreviousImage() {
+    currentImageIndex =
+        (currentImageIndex - 1 + serviceImages.length) % serviceImages.length;
+
+    updateModalImage();
+}
+
+function updateModalImage() {
+    const modalImage = document.getElementById('modalImage');
+
+    modalImage.src = serviceImages[currentImageIndex].src;
+    modalImage.alt = serviceImages[currentImageIndex].alt;
+}
+
+function closeImageModal() {
+    document.getElementById('imageModal').classList.remove('show');
+}
+
+serviceImages.forEach(function(img, index) {
+    img.style.cursor = 'pointer';
+
+    img.addEventListener('click', function() {
+        openImage(index);
+    });
 });
 
-document.getElementById('imageModal').onclick = function() {
-    this.classList.remove('show');
-};
+document.querySelector('.next-image').addEventListener('click', function(event) {
+    event.stopPropagation();
+    showNextImage();
+});
+
+document.querySelector('.prev-image').addEventListener('click', function(event) {
+    event.stopPropagation();
+    showPreviousImage();
+});
+
+document.querySelector('.close-image').addEventListener('click', function(event) {
+    event.stopPropagation();
+    closeImageModal();
+});
+
+document.getElementById('imageModal').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeImageModal();
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('imageModal');
+
+    if (!modal.classList.contains('show')) return;
+
+    if (event.key === 'ArrowRight') {
+        showNextImage();
+    }
+
+    if (event.key === 'ArrowLeft') {
+        showPreviousImage();
+    }
+
+    if (event.key === 'Escape') {
+        closeImageModal();
+    }
+});
 </script>
     
 </body>
