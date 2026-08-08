@@ -577,7 +577,7 @@ bookingDate.addEventListener("change", function () {
 
     for (let hour = startHour; hour <= endHour; hour++) {
 
-        for (let minutes of [0, 30]) {
+        for (let minutes = 0; minutes < 60; minutes += 5) {
 
             if (hour === endHour && minutes > endMinute) {
                 continue;
@@ -602,9 +602,26 @@ bookingDate.addEventListener("change", function () {
             const option = document.createElement("option");
 
             option.value = timeText;
-            option.textContent = timeText;
+option.textContent = timeText;
 
-            bookingTime.appendChild(option);
+// Grey out times that have already passed today
+const now = new Date();
+const selectedDate = new Date(this.value + "T00:00:00");
+
+const todayDate = new Date();
+todayDate.setHours(0, 0, 0, 0);
+
+if (selectedDate.getTime() === todayDate.getTime()) {
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+    const slotMinutes = hour * 60 + minutes;
+
+    if (slotMinutes <= currentMinutes) {
+        option.disabled = true;
+        option.textContent = timeText + " — unavailable";
+    }
+}
+
+bookingTime.appendChild(option);
         }
     }
 });
