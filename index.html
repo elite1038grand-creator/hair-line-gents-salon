@@ -556,7 +556,7 @@ function closeImage() {
     <button id="closeImage" class="close-image">&times;</button>
 </div>
 
-    <script>
+<script>
 const bookingDate = document.getElementById("bookingDate");
 const bookingTime = document.getElementById("bookingTime");
 
@@ -567,19 +567,19 @@ bookingDate.addEventListener("change", function () {
     const selectedDate = new Date(this.value + "T00:00:00");
     const day = selectedDate.getDay();
 
-    // Sunday closed
-    if (day === 0) {
-        bookingTime.innerHTML =
-            '<option value="">Salon is closed on Sunday</option>';
-        return;
-    }
+    // Monday-Thursday: 10:00 AM - 10:00 PM
+    // Friday-Sunday: 10:00 AM - 11:30 PM
+    const extendedDay = day === 5 || day === 6 || day === 0;
 
-    // Appointment slots: 9:00 AM - 9:00 PM
-    for (let hour = 9; hour <= 20; hour++) {
+    const startHour = 10;
+    const endHour = extendedDay ? 23 : 22;
+    const endMinute = extendedDay ? 30 : 0;
+
+    for (let hour = startHour; hour <= endHour; hour++) {
 
         for (let minutes of [0, 30]) {
 
-            if (hour === 20 && minutes === 30) {
+            if (hour === endHour && minutes > endMinute) {
                 continue;
             }
 
@@ -588,6 +588,7 @@ bookingDate.addEventListener("change", function () {
 
             if (hour >= 12) {
                 period = "PM";
+
                 if (hour > 12) {
                     displayHour = hour - 12;
                 }
