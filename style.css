@@ -1074,3 +1074,41 @@ footer {
         grid-column: 1;
     }
 }
+
+.date-slots {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 8px 0;
+}
+
+.date-slot {
+    min-width: 90px;
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+}
+
+.date-slot:hover {
+    border-color: #222;
+}
+
+.date-slot.selected {
+    background: #222;
+    color: white;
+    border-color: #222;
+}
+
+.date-slot strong {
+    font-size: 14px;
+}
+
+.date-slot span {
+    font-size: 13px;
+}
