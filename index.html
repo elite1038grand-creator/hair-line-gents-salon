@@ -484,6 +484,23 @@ function closeImage() {
 <footer>
     <p>© 2026 Hair Line Gents Salon. All Rights Reserved.</p>
 </footer>
+<div id="imageModal" class="image-modal">
+    <span class="close-image">&times;</span>
+    <img id="modalImage">
+</div>
 
+<script>
+document.querySelectorAll('.card img').forEach(function(img) {
+    img.onclick = function() {
+        document.getElementById('modalImage').src = this.src;
+        document.getElementById('imageModal').classList.add('show');
+    };
+});
+
+document.getElementById('imageModal').onclick = function() {
+    this.classList.remove('show');
+};
+</script>
+    
 </body>
 </html>
