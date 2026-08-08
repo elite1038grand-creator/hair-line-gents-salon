@@ -556,6 +556,59 @@ function closeImage() {
     <button id="closeImage" class="close-image">&times;</button>
 </div>
 
+    <script>
+const bookingDate = document.getElementById("bookingDate");
+const bookingTime = document.getElementById("bookingTime");
+
+bookingDate.addEventListener("change", function () {
+
+    bookingTime.innerHTML = '<option value="">Select a time</option>';
+
+    const selectedDate = new Date(this.value + "T00:00:00");
+    const day = selectedDate.getDay();
+
+    // Sunday closed
+    if (day === 0) {
+        bookingTime.innerHTML =
+            '<option value="">Salon is closed on Sunday</option>';
+        return;
+    }
+
+    // Appointment slots: 9:00 AM - 9:00 PM
+    for (let hour = 9; hour <= 20; hour++) {
+
+        for (let minutes of [0, 30]) {
+
+            if (hour === 20 && minutes === 30) {
+                continue;
+            }
+
+            let displayHour = hour;
+            let period = "AM";
+
+            if (hour >= 12) {
+                period = "PM";
+                if (hour > 12) {
+                    displayHour = hour - 12;
+                }
+            }
+
+            const minuteText = minutes === 0 ? "00" : "30";
+
+            const timeText =
+                displayHour + ":" + minuteText + " " + period;
+
+            const option = document.createElement("option");
+
+            option.value = timeText;
+            option.textContent = timeText;
+
+            bookingTime.appendChild(option);
+        }
+    }
+});
+</script>
+    
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
