@@ -32,9 +32,13 @@
             Premium Haircuts • Skin Fades • Beard Grooming
         </p>
 
-        <a href="#contact" class="btn">
-            Visit Us
-        </a>
+       <a href="#contact" class="btn">
+    Visit Us
+</a>
+
+<a href="#booking" class="booking-btn">
+    Book an Appointment
+</a>
 
     </div>
 
@@ -171,6 +175,43 @@
 
   </div>
 
+</section>
+    <section id="booking" class="section booking-section">
+    <h2>Book an Appointment</h2>
+    <p>Choose your service, date and time.</p>
+
+    <form id="bookingForm">
+
+        <label for="bookingService">Choose Service</label>
+        <select id="bookingService" required>
+            <option value="">Select a service</option>
+            <option>Hair Highlight Color - 100 DHS</option>
+            <option>Hair Keratin Treatment - 100 DHS</option>
+            <option>Men Hair Smoothing Treatment - 100 DHS</option>
+            <option>Face Cleanup - 40 DHS</option>
+            <option>Kids Haircut - 15 DHS</option>
+            <option>Face + Nose + Ear Waxing - 30 DHS</option>
+            <option>Natural Hair Color - 40 DHS</option>
+            <option>Haircut - 25 DHS</option>
+            <option>Haircut + Beard Styling - 35 DHS</option>
+            <option>Beard Black Color - 30 DHS</option>
+        </select>
+
+        <label for="bookingDate">Choose Date</label>
+        <input type="date" id="bookingDate" required>
+
+        <label for="bookingTime">Choose Time</label>
+        <input type="time" id="bookingTime" required>
+
+        <label for="customerName">Your Name</label>
+        <input type="text" id="customerName" placeholder="Enter your name" required>
+
+        <label for="customerPhone">Phone Number</label>
+        <input type="tel" id="customerPhone" placeholder="Enter your phone number" required>
+
+        <button type="submit">Confirm Booking</button>
+
+    </form>
 </section>
     
 <section id="gallery" class="section">
@@ -568,6 +609,31 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+});
+</script>
+
+    <script>
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const service = document.getElementById("bookingService").value;
+    const date = document.getElementById("bookingDate").value;
+    const time = document.getElementById("bookingTime").value;
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+
+    const message =
+        "New Appointment Booking%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Customer Phone: " + encodeURIComponent(phone) + "%0A" +
+        "Service: " + encodeURIComponent(service) + "%0A" +
+        "Date: " + encodeURIComponent(date) + "%0A" +
+        "Time: " + encodeURIComponent(time);
+
+    const whatsappNumber = "971525267700";
+
+    window.location.href =
+        "https://wa.me/" + whatsappNumber + "?text=" + message;
 });
 </script>
     
