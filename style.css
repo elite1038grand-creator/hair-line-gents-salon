@@ -1112,3 +1112,7 @@ footer {
 .date-slot span {
     font-size: 13px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
