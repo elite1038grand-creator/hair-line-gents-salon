@@ -228,7 +228,6 @@
     </button>
 
 </form>
-    </form>
 </section>
     
 <section id="gallery" class="section">
@@ -700,7 +699,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-    <script>
+   <script>
 document.getElementById("bookingForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -710,19 +709,28 @@ document.getElementById("bookingForm").addEventListener("submit", function(event
     const name = document.getElementById("customerName").value;
     const phone = document.getElementById("customerPhone").value;
 
+    if (!service || !date || !time || !name || !phone) {
+        alert("Please fill in all booking details.");
+        return;
+    }
+
     const message =
-        "New Appointment Booking%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Customer Phone: " + encodeURIComponent(phone) + "%0A" +
-        "Service: " + encodeURIComponent(service) + "%0A" +
-        "Date: " + encodeURIComponent(date) + "%0A" +
-        "Time: " + encodeURIComponent(time);
+        "New Appointment Booking\n\n" +
+        "Name: " + name + "\n" +
+        "Customer Phone: " + phone + "\n" +
+        "Service: " + service + "\n" +
+        "Date: " + date + "\n" +
+        "Time: " + time;
 
     const whatsappNumber = "971525267700";
 
-    window.location.href =
-        "https://wa.me/" + whatsappNumber + "?text=" + message;
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+
+    window.location.href = whatsappURL;
 });
+</script>
 </script>
     
 </body>
