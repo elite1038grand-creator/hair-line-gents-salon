@@ -969,3 +969,22 @@ footer {
         right: 10px;
     }
 }
+
+/* Book Appointment Button */
+.booking-btn {
+    display: inline-block;
+    background: #7c3aed;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.3s ease;
+}
+
+.booking-btn:hover {
+    background: #9333ea;
+    transform: translateY(-2px);
+}
