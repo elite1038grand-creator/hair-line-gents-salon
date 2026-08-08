@@ -1116,3 +1116,22 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.logo span {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: bold;
+}
