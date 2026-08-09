@@ -1135,3 +1135,21 @@ html {
     font-style: italic;
     font-weight: bold;
 }
+
+/* Keep the footer simple and dark */
+footer {
+    background: #080d1c !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 30px 20px !important;
+}
+
+footer p {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #ccc !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
